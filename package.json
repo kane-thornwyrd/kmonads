@@ -1,6 +1,6 @@
 {
-  "name": "my-monads",
-  "version": "0.0.0",
+  "name": "monads",
+  "version": "0.0.0.1",
   "description": "Just an exercise on the composition capabilities of JS",
   "main": "monads.js",
   "directories": {
