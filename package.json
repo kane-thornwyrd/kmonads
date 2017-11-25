@@ -1,0 +1,27 @@
+{
+  "name": "my-monads",
+  "version": "1.0.0",
+  "description": "Just an exercise on the composition capabilities of JS",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kane-thornwyrd/my-monads.git"
+  },
+  "keywords": [
+    "monad",
+    "compositing",
+    "composition"
+  ],
+  "author": "Jean-cédric Thérond <jean.cedric.t@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kane-thornwyrd/my-monads/issues"
+  },
+  "homepage": "https://github.com/kane-thornwyrd/my-monads#readme"
+}
