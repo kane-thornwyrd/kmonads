@@ -14,12 +14,12 @@
       "dictionaries": ["jsdoc","closure"]
   },
   "templates": {
-    "name": "Monads",
+    "name": "Kmonads",
     "logo": {
-      "url": "https://github.com/kane-thornwyrd/monads/blob/master/monads.png?raw=true",
+      "url": "https://github.com/kane-thornwyrd/kmonads/blob/master/kmonads.png?raw=true",
       "width": "32px",
       "height": "32px",
-      "link": "https://kane-thornwyrd.github.io/monads/"
+      "link": "https://kane-thornwyrd.github.io/kmonads/"
     },
     "useCollapsibles": true,
     "footerText": "A Kane Thornwyrd Product"
