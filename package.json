@@ -4,10 +4,11 @@
   "description": "Just an exercise on the composition capabilities of JS",
   "main": "index.js",
   "directories": {
-    "doc": "docs"
+    "docs": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc -c .jsdocrc index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/kane-thornwyrd/my-monads/issues"
   },
-  "homepage": "https://github.com/kane-thornwyrd/my-monads#readme"
+  "homepage": "https://github.com/kane-thornwyrd/my-monads#readme",
+  "devDependencies": {
+    "jsdoc": "3.5.5",
+    "tui-jsdoc-template": "1.2.2"
+  }
 }
