@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    "plugins/markdown",
+    "plugins/summarize"
+  ],
+  "recurseDepth": 10,
+  "source": {
+      "includePattern": ".+\\.js(doc|x)?$",
+      "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module",
+  "tags": {
+      "allowUnknownTags": true,
+      "dictionaries": ["jsdoc","closure"]
+  },
+  "templates": {
+    "name": "Kane's Monads",
+    "logo": {
+      "url": "https://github.com/kane-thornwyrd/my-monads/blob/master/kmonad.png?raw=true",
+      "width": "32px",
+      "height": "32px",
+      "link": "https://kane-thornwyrd.github.io/my-monads/"
+    },
+    "useCollapsibles": true,
+    "footerText": "A Kane Thornwyrd Product"
+  },
+  "opts": {
+    "template": "node_modules/tui-jsdoc-template",
+    "destination": "./docs/"
+  }
+}
