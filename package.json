@@ -2,17 +2,17 @@
   "name": "my-monads",
   "version": "1.0.0",
   "description": "Just an exercise on the composition capabilities of JS",
-  "main": "index.js",
+  "main": "monads.js",
   "directories": {
     "docs": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "jsdoc -c .jsdocrc index.js"
+    "docs": "jsdoc -c .jsdocrc monads.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kane-thornwyrd/my-monads.git"
+    "url": "git+https://github.com/kane-thornwyrd/monads.git"
   },
   "keywords": [
     "monad",
@@ -22,9 +22,9 @@
   "author": "Jean-cédric Thérond <jean.cedric.t@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/kane-thornwyrd/my-monads/issues"
+    "url": "https://github.com/kane-thornwyrd/monads/issues"
   },
-  "homepage": "https://github.com/kane-thornwyrd/my-monads#readme",
+  "homepage": "https://kane-thornwyrd.github.io/monads/",
   "devDependencies": {
     "jsdoc": "3.5.5",
     "tui-jsdoc-template": "1.2.2"
