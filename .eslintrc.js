@@ -43,4 +43,9 @@ module.exports = {
     sinon: true,
     sinonChai: true
   },
+  "overrides": [
+    {
+      "files": [ "test/*.js", "lib/*.js" ],
+    }
+  ]
 };
