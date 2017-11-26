@@ -2,7 +2,7 @@
   "name": "kmonads",
   "version": "0.0.2",
   "description": "Just an exercise on the composition capabilities of JS",
-  "main": "src/kmonads.js",
+  "main": "lib/kmonads.js",
   "directories": {
     "docs": "docs"
   },
