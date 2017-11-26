@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 5 versions", "safari >= 7"]
+      }
+    }]
+  ],
+  "plugins": [
+    "transform-es2015-modules-umd",
+    "transform-async-generator-functions",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-minify-booleans",
+    "transform-remove-console",
+    "transform-remove-debugger"
+  ]
+}

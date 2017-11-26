@@ -26,7 +26,7 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': [
       'error', { devDependencies: [
-        '**/__tests__/**/*.js'
+        '**/test/**/*.js'
       ] }
     ],
     'max-len': ['error', 120],

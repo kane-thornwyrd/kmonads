@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home | Kmonads</title>
+    <title>Source: kmonads.js | Kmonads</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -44,19 +46,22 @@
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Convert
+ *
+ * @param      {Any}  x       anything
+ * @return     {Array}  a tuple
+ */
+const unit = x => [x, [], []];
 
-
-
-
-
-
-
-
-
-    
-
-
-
+module.exports = {
+  unit,
+};
+</code></pre>
+        </article>
+    </section>
 
 
 
@@ -73,7 +78,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'package:undefined_sub'.replace(/"/g, '_');
+        var id = '_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
