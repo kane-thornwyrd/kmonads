@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#unit">unit</a></li></ul></div>
+    <div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#bind">bind</a></li><li><a href="global.html#compose">compose</a></li><li><a href="global.html#lift">lift</a></li><li><a href="global.html#typeOf">typeOf</a></li><li><a href="global.html#unit">unit</a></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -77,9 +77,518 @@
 
 <dt>
     
-        <h4 class="name" id="unit">
+        <h4 class="name" id="bind">
             
-                <span class="type-signature"></span>unit<span class="signature">(x)</span><span class="type-signature"> &rarr; {Array}</span>
+                <span class="type-signature"></span>bind<span class="signature">(f)</span><span class="type-signature"> &rarr; {function}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="kmonads.js.html">kmonads.js</a></code>,
+                <code><a href="kmonads.js.html#line41">line 41</a></code>
+            </div>
+            
+        </h4>
+
+        
+        <p class="summary">Allow triplets to be glued together.</p>
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Allow triplets to be glued together.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>f</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>{ parameter_description }</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">function</span>
+
+
+
+
+
+- <p>{ description_of_the_return_value }</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="compose">
+            
+                <span class="type-signature"></span>compose<span class="signature">(f, g)</span><span class="type-signature"> &rarr; {Array}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="kmonads.js.html">kmonads.js</a></code>,
+                <code><a href="kmonads.js.html#line24">line 24</a></code>
+            </div>
+            
+        </h4>
+
+        
+        <p class="summary">compose two function.</p>
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>compose two function.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>f</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>a function to compose</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>g</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>a function to compose</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array</span>
+
+
+
+
+
+- <p>a triplet</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="lift">
+            
+                <span class="type-signature"></span>lift<span class="signature">(f)</span><span class="type-signature"> &rarr; {Array}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="kmonads.js.html">kmonads.js</a></code>,
+                <code><a href="kmonads.js.html#line57">line 57</a></code>
+            </div>
+            
+        </h4>
+
+        
+        <p class="summary">Convert a function into a triplet outputing one.</p>
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Convert a function into a triplet outputing one.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>f</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the function to convert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array</span>
+
+
+
+
+
+- <p>a triplet</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="typeOf">
+            
+                <span class="type-signature"></span>typeOf<span class="signature">(x)</span><span class="type-signature"> &rarr; {string}</span>
                 
             
             <div class="container-source members">
@@ -90,7 +599,7 @@
         </h4>
 
         
-        <p class="summary"><p>Convert</p>.</p>
+        <p class="summary"><p>Return the real type of something</p>.</p>
         
     
 </dt>
@@ -98,7 +607,169 @@
 
     
     <div class="description">
-        <p>Convert</p>
+        <p>Return the real type of something</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>anything to analyse</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">string</span>
+
+
+
+
+
+- <p>{ description_of_the_return_value }</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="unit">
+            
+                <span class="type-signature"></span>unit<span class="signature">(x)</span><span class="type-signature"> &rarr; {Array}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="kmonads.js.html">kmonads.js</a></code>,
+                <code><a href="kmonads.js.html#line15">line 15</a></code>
+            </div>
+            
+        </h4>
+
+        
+        <p class="summary">Convert a value to a triplet.</p>
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Convert a value to a triplet.</p>
     </div>
     
 
@@ -184,7 +855,7 @@
 
 
 
-- <p>a tuple</p>
+- <p>a triplet</p>
 
 
 
