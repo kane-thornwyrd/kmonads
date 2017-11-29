@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     'strict': 2,
     'valid-jsdoc': 'error',
+    'no-plusplus': 'off',
     'no-restricted-syntax': [
       'error',
       {

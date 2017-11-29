@@ -1,75 +1,100 @@
+const VALUE = 0;
+const DEBUG = 1;
+const ERROR = 2;
+
 /**
  * Return the real type of something
  *
- * @param      {any}  x       anything to analyse
- * @return     {string}  { description_of_the_return_value }
+ * @param {any} x - anything to analyse
+ *
+ * @return {string} the type name
  */
-function typeOf(x) { return /^\[object (.+)\]$/.exec(Object.prototype.toString.apply(x))[1]; }
+function typeOf(x) {
+  return /^\[object (.+)\]$/
+    .exec(Object.prototype.toString.apply(x))[1];
+}
 
 /**
- * Convert a value to a triplet.
+ * Wraps a value in the type accepted by the composable functions.
  *
- * @param      {Any}  x       anything
- * @return     {Array}  a triplet
+ * @param {Any}    x    - anything
+ *
+ * @return {Array} a triplet
  */
-function unit(x) { return [[x], ['Unit'], []]; }
+function unit(x) { return [[x], [''], [undefined]]; }
 
 /**
  * compose two function.
  *
- * @param      {Function}  f       a function to compose
- * @param      {Function}  g       a function to compose
- * @return     {Array}    a triplet
+ * @param {Function} f - first function to compose
+ * @param {Function} g - second function to compose
+ *
+ * @return {Array} a triplet
  */
-function compose(f, g) {
-  return (w) => {
-    let x = w[0];
-    const [y, s, t] = g(x[x.length - 1]);
-    x = x.concat(y);
-    const [z, u, v] = f(x[x.length - 1]);
-    x = x.concat(z);
-    return [x, w[1].concat(s, u), w[2].concat(t, v)];
-  };
-}
+function compose(f, g) { return x => f(g(x)); }
 
 /**
- * Allow triplets to be glued together.
+ * Transforms any function so that accepts the same type as it returns.
  *
- * @param      {function}  f       { parameter_description }
- * @return     {function}  { description_of_the_return_value }
+ * @param {function} f - to convert
+ *
+ * @return {function} the triplet outputed
  */
 function bind(f) {
-  return (triplet) => {
-    let output = [];
-    for (let i = 0, n = triplet[0].length; i < n; i += 1) {
-      output = output.concat(f(triplet[0][i]));
-    }
-    return output;
+  return function binded([x, s, t]) {
+    const [y, u, v] = f(x[x.length - 1]);
+    return [x.concat(y), s.concat(u), t.concat(v)];
   };
 }
 
 /**
- * Convert a function into a triplet outputing one.
+ * Convert a simple function into a composable debugging one.
  *
- * @param      {Function}  f       the function to convert
- * @return     {Array}     a triplet
+ * @param {Function} f    - to convert
+ * @param {string}   name - The name
+ *
+ * @return {Array} the triplet outputed
  */
-function lift(f) {
+function lift(f, name) {
   return (x) => {
-    let out;
+    const out = [[undefined], [name], [undefined]];
     try {
-      out = f(x);
+      out[VALUE] = [f(x)];
+      if (typeOf(out[VALUE][0]) === 'Number') {
+        if (Number.isNaN(out[VALUE][0])) {
+          out[VALUE][0] = undefined;
+          out[ERROR][0] = new Error('Is not a number');
+        }
+        if (out[VALUE][0] === Infinity) {
+          out[VALUE][0] = undefined;
+          out[ERROR][0] = new Error('Is Infinity');
+        }
+      }
     } catch (err) {
-      return [out, [], [err]];
+      out[ERROR] = [err];
     }
-    return unit(out);
+    return out;
   };
+}
+
+function pipe(x, functions) {
+  let w = x;
+  for (let i = 0, len = functions.length; i < len; i++) {
+    w = bind(functions[i])(w);
+  }
+  return w;
 }
 
 module.exports = {
+  CONSTS: {
+    VALUE,
+    DEBUG,
+    ERROR,
+  },
   typeOf,
   unit,
   compose,
   bind,
   lift,
+  pipe,
 };
