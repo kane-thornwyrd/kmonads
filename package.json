@@ -7,11 +7,12 @@
     "docs": "docs"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha -c",
     "docs": "jsdoc -c .jsdocrc src/kmonads.js",
     "lint": "NODE_ENV=test eslint \"./src/**/*.js\"",
     "start": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch"
+    "build": "npm start",
+    "watch": "watch -c mocha -c"
   },
   "repository": {
     "type": "git",
